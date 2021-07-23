@@ -5,6 +5,7 @@
     transition: margin-left .28s;
     margin-left: $sideBarWidth;
     position: relative;
+    background-color: #f0f2f5;
   }
 
   .sidebar-container {
@@ -51,6 +52,7 @@
       display: inline-block;
       width: 100%;
       overflow: hidden;
+      text-decoration:none;
     }
 
     .svg-icon {
@@ -183,6 +185,10 @@
       transition: none;
     }
   }
+  .btn-submit{
+    background-color: #42b983;
+    margin-left: 8px;
+  }
 }
 
 // when menu collapsed
@@ -222,5 +228,5 @@
       background: #99a9bf;
       border-radius: 20px;
     }
-  }
+  }  
 }

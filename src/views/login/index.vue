@@ -3,8 +3,8 @@
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
 
       <div class="title-container">
-        <img src="../../../public/logo-removebg1.png" class="center" width="300" alt="">
-        <!-- <h3 class="title"></h3> -->
+        <img src="../../../public/logo-removebg1.png" class="center" width="250" alt="">
+        <h4 class="title">內部後台登入</h4>
       </div>
 
       <el-form-item prop="username">

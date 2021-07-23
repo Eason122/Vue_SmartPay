@@ -6,30 +6,6 @@ Vue.use(Router)
 /* Layout */
 import Layout from '@/layout'
 
-/**
- * Note: sub-menu only appear when route children.length >= 1
- * Detail see: https://panjiachen.github.io/vue-element-admin-site/guide/essentials/router-and-nav.html
- *
- * hidden: true                   if set true, item will not show in the sidebar(default is false)
- * alwaysShow: true               if set true, will always show the root menu
- *                                if not set alwaysShow, when item has more than one children route,
- *                                it will becomes nested mode, otherwise not show the root menu
- * redirect: noRedirect           if set noRedirect will no redirect in the breadcrumb
- * name:'router-name'             the name is used by <keep-alive> (must set!!!)
- * meta : {
-    roles: ['admin','editor']    control the page roles (you can set multiple roles)
-    title: 'title'               the name show in sidebar and breadcrumb (recommend set)
-    icon: 'svg-name'/'el-icon-x' the icon show in the sidebar
-    breadcrumb: false            if set false, the item will hidden in breadcrumb(default is true)
-    activeMenu: '/example/list'  if set path, the sidebar will highlight the path you set
-  }
- */
-
-/**
- * constantRoutes
- * a base page that does not have permission requirements
- * all roles can be accessed
- */
 export const constantRoutes = [
   {
     path: '/login',
@@ -42,120 +18,212 @@ export const constantRoutes = [
     component: () => import('@/views/404'),
     hidden: true
   },
-
   {
     path: '/',
     component: Layout,
-    redirect: '/dashboard',
-    children: [{
-      path: 'dashboard',
-      name: '測試測試',
-      component: () => import('@/views/dashboard/index'),
-      meta: { title: '廠商資料', icon: 'dashboard' } // meun name
-    }]
+    // redirect: '/',
+    children: [
+      {
+        path: 'dashboard',
+        component: () => import('@/views/dashboard/index'),
+        name: '',
+        meta: { title: '首頁', icon: 'dashboard', affix: true }
+      }
+    ]
   },
 
   {
-    path: '/example',
+    path: '/Vendor_Information', // 廠商資料
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
+    // redirect: '/Vendor_Information', // 首頁項目
+    meta: { title: '廠商資料', icon: 'el-icon-s-help' },
+    children: [
+      {
+        path: '1-1',
+        name: '1-1.vue',
+        component: () => import('@/views/Vendor_Information/1-1'),
+        meta: { title: '廠商基本資料', icon: '' }
+      },
+      {
+        path: '1-2',
+        name: '1-2.vue',
+        component: () => import('@/views/Vendor_Information/1-2'),
+        meta: { title: '特約會員合約條件商議申請', icon: '' }
+      },
+      {
+        path: '1-3',
+        name: '1-3.vue',
+        component: () => import('@/views/Vendor_Information/1-3'),
+        meta: { title: '手續費設定', icon: '' }
+      }
+    ]
+  },
+
+  {
+    path: '/System_Development', // 系統開發
+    component: Layout,
     meta: { title: '系統開發管理', icon: 'el-icon-s-help' },
     children: [
       {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        path: '2-1',
+        name: '2-1.vue',
+        component: () => import('@/views/System_Development/2-1'),
+        meta: { title: '交易狀態代碼查詢', icon: '' }
       },
       {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
+        path: '2-2',
+        name: '2-2.vue',
+        component: () => import('@/views/System_Development/2-2'),
+        meta: { title: '系統介接查詢', icon: '' }
+      },
+      {
+        path: '2-3',
+        name: '2-3.vue',
+        component: () => import('@/views/System_Development/2-3'),
+        meta: { title: '帳號權限及密碼設定', icon: '' }
       }
     ]
   },
-
   {
-    path: '/form',
+    path: '/Credit_Card_Acquiring', // 信用卡收單
     component: Layout,
+    meta: { title: '信用卡收單', icon: 'el-icon-s-help' },
     children: [
       {
-        path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: '信用卡收單', icon: 'form' }
+        path: '3-1',
+        name: '3-1.vue',
+        component: () => import('@/views/Credit_Card_Acquiring/3-1'),
+        meta: { title: '信用卡授權資訊', icon: '' }
+      },
+      {
+        path: '3-2',
+        name: '3-2.vue',
+        component: () => import('@/views/Credit_Card_Acquiring/3-2'),
+        meta: { title: '信用卡帳戶設定', icon: '' }
+      },
+      {
+        path: '3-3',
+        name: '3-3.vue',
+        component: () => import('@/views/Credit_Card_Acquiring/3-3'),
+        meta: { title: '交易明細查詢', icon: '' }
+      },
+      {
+        path: '3-4',
+        name: '3-4.vue',
+        component: () => import('@/views/Credit_Card_Acquiring/3-4'),
+        meta: { title: '待請款列表查詢', icon: '' }
+      },
+      {
+        path: '3-5',
+        name: '3-5.vue',
+        component: () => import('@/views/Credit_Card_Acquiring/3-5'),
+        meta: { title: '已請款明細查詢', icon: '' }
+      },
+      {
+        path: '3-6',
+        name: '3-6.vue',
+        component: () => import('@/views/Credit_Card_Acquiring/3-6'),
+        meta: { title: '已清算待撥款明細查詢', icon: '' }
+      },
+      {
+        path: '3-7',
+        name: '3-7.vue',
+        component: () => import('@/views/Credit_Card_Acquiring/3-7'),
+        meta: { title: '已撥款明細查詢', icon: '' }
+      },
+      {
+        path: '3-8',
+        name: '3-8.vue',
+        component: () => import('@/views/Credit_Card_Acquiring/3-8'),
+        meta: { title: '請款失敗列表', icon: '' }
+      },
+      {
+        path: '3-9',
+        name: '3-9.vue',
+        component: () => import('@/views/Credit_Card_Acquiring/3-9'),
+        meta: { title: '拒絕交易卡號列表', icon: '' }
+      },
+      {
+        path: '3-10',
+        name: '3-10.vue',
+        component: () => import('@/views/Credit_Card_Acquiring/3-10'),
+        meta: { title: '退刷圈存查詢', icon: '' }
       }
     ]
   },
 
   {
-    path: '/nested',
+    path: '/Chart',
     component: Layout,
-    redirect: '/nested/menu1',
-    name: 'Nested',
     meta: {
       title: '全方位金流圖表分析',
-      icon: 'nested'
+      icon: 'el-icon-s-help'
     },
     children: [
       {
-        path: 'menu1',
-        component: () => import('@/views/nested/menu1/index'), // Parent router-view
-        name: 'Menu1',
-        meta: { title: 'Menu1' },
-        children: [
-          {
-            path: 'menu1-1',
-            component: () => import('@/views/nested/menu1/menu1-1'),
-            name: 'Menu1-1',
-            meta: { title: 'Menu1-1' }
-          },
-          {
-            path: 'menu1-2',
-            component: () => import('@/views/nested/menu1/menu1-2'),
-            name: 'Menu1-2',
-            meta: { title: 'Menu1-2' },
-            children: [
-              {
-                path: 'menu1-2-1',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
-                name: 'Menu1-2-1',
-                meta: { title: 'Menu1-2-1' }
-              },
-              {
-                path: 'menu1-2-2',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
-                name: 'Menu1-2-2',
-                meta: { title: 'Menu1-2-2' }
-              }
-            ]
-          },
-          {
-            path: 'menu1-3',
-            component: () => import('@/views/nested/menu1/menu1-3'),
-            name: 'Menu1-3',
-            meta: { title: 'Menu1-3' }
-          }
-        ]
+        path: '4-1',
+        name: '4-1.vue',
+        component: () => import('@/views/Chart/4-1'),
+        meta: { title: '收款金額圖表分析(月報)', icon: '' }
       },
       {
-        path: 'menu2',
-        component: () => import('@/views/nested/menu2/index'),
-        name: 'Menu2',
-        meta: { title: 'menu2' }
+        path: '4-2',
+        name: '4-2.vue',
+        component: () => import('@/views/Chart/4-1'),
+        meta: { title: '收款筆數圖表分析(月報)', icon: '' }
       }
     ]
   },
 
   {
-    path: 'external-link',
+    path: '/Account',
     component: Layout,
+    meta: {
+      title: '金流帳戶管理',
+      icon: 'el-icon-s-help'
+    },
     children: [
       {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: '金流帳戶管理', icon: 'link' }
+        path: '5-1',
+        name: '5-1.vue',
+        component: () => import('@/views/Account/5-1'),
+        meta: { title: '帳戶總覽', icon: '' }
+      },
+      {
+        path: '5-2',
+        name: '5-2.vue',
+        component: () => import('@/views/Account/5-2'),
+        meta: { title: '帳務進出明細', icon: '' }
+      },
+      {
+        path: '5-3',
+        name: '5-3.vue',
+        component: () => import('@/views/Account/5-3'),
+        meta: { title: '保留款明細', icon: '' }
+      },
+      {
+        path: '5-4',
+        name: '5-4.vue',
+        component: () => import('@/views/Account/5-4'),
+        meta: { title: '預付款存入', icon: '' }
+      },
+      {
+        path: '5-5',
+        name: '5-5.vue',
+        component: () => import('@/views/Account/5-5'),
+        meta: { title: '提領紀錄查詢', icon: '' }
+      },
+      {
+        path: '5-6',
+        name: '5-6.vue',
+        component: () => import('@/views/Account/5-6'),
+        meta: { title: '銀行帳號查詢', icon: '' }
+      },
+      {
+        path: '5-7',
+        name: '5-7.vue',
+        component: () => import('@/views/Account/5-7'),
+        meta: { title: '手續費發票明細', icon: '' }
       }
     ]
   },

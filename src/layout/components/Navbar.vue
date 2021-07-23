@@ -3,6 +3,12 @@
     <hamburger :is-active="sidebar.opened" class="hamburger-container" @toggleClick="toggleSideBar" />
 
     <breadcrumb class="breadcrumb-container" />
+    <div class="button">
+      <select id="" class="form-control select30" name="">
+        <option value="電商名稱">CTPay</option>
+      </select>
+      <button id="merChoose" class="btn btn-sm btn-submit" type="button">送出</button>
+    </div>
 
     <div class="right-menu">
       <el-dropdown class="avatar-container" trigger="click">
@@ -59,15 +65,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../styles/main.scss";
 .navbar {
-  height: 50px;
+  height: 55px;
   overflow: hidden;
   position: relative;
-  background: #fff;
+  background-color: #fff;
+  // background-color: rgb(186, 250, 194);
   box-shadow: 0 1px 4px rgba(0,21,41,.08);
 
   .hamburger-container {
-    line-height: 46px;
+    line-height: 20px;
     height: 100%;
     float: left;
     cursor: pointer;
@@ -86,7 +94,7 @@ export default {
   .right-menu {
     float: right;
     height: 100%;
-    line-height: 50px;
+    // line-height: 50px;
 
     &:focus {
       outline: none;
@@ -118,6 +126,9 @@ export default {
         position: relative;
 
         .user-avatar {
+          position: absolute;
+          top: -25px;
+          left: -30px;
           cursor: pointer;
           width: 40px;
           height: 40px;
@@ -125,14 +136,24 @@ export default {
         }
 
         .el-icon-caret-bottom {
+          // position: absolute;
+          // top: -25px;
+          // left: -30px;
           cursor: pointer;
           position: absolute;
-          right: -20px;
-          top: 25px;
+          right: -25px;
+          top: 0px;
           font-size: 12px;
         }
       }
     }
+  }
+  .button{
+    width: 300px;
+    display: flex;
+  }
+  .select30{
+    width: 50%;
   }
 }
 </style>
