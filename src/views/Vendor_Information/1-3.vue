@@ -1,10 +1,6 @@
 <template>
   <div class="dashboard-container">
-    <h3><span>手續費設定</span><span id="logout_time" /></h3>
-    <div class="whitepanel">
-      選擇電商 : <select id="mer_idSelect" class="form-control" name="mer_idSelect" style="display:none" />
-      <button id="merChoose" class="btn btn-sm btn-submit" type="button">送出</button>
-    </div>
+    <!-- <h3><span>手續費設定</span><span id="logout_time" /></h3> -->
     <br>
     <!-- <p id="result"></p> -->
     <div class="whitepanel">

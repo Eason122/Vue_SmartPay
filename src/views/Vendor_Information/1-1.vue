@@ -1,10 +1,6 @@
 <template>
   <div class="dashboard-container">
-    <h3><span>廠商基本資料</span><span id="logout_time" /></h3>
-    <div class="whitepanel">
-      選擇電商 : <select id="mer_idSelect" class="form-control" name="mer_idSelect" style="display:none" />
-      <button id="merChoose" class="btn btn-sm btn-submit" type="button">送出</button>
-    </div>
+    <!-- <h3><span>廠商基本資料</span><span id="logout_time" /></h3> -->
     <br>
     <!-- <p id="result"></p> -->
     <div class="whitepanel">
@@ -12,7 +8,7 @@
       <table class="table_A table table-bordered">
         <tr>
           <th class="td_A">商店代號</th>
-          <td id="mer_id" />
+          <td id="mer_id" /> 
         </tr>
         <tr>
           <th>商店名稱</th>

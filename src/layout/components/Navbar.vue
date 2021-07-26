@@ -13,7 +13,7 @@
     <div class="right-menu">
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
-          <a href="/">
+          <a href="/SmartPay">
             <img src="../../../public/logo.png" class="user-avatar">
           </a>
           <i class="el-icon-caret-bottom" />
@@ -88,6 +88,7 @@ export default {
   }
 
   .breadcrumb-container {
+    font-size: 24px;
     float: left;
   }
 

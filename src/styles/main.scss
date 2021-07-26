@@ -5,11 +5,20 @@
 @import './sidebar.scss';
 
 .whitepanel{
-    background-color: #d9dbdd;
-    // background-color: rgba(223, 223, 223, 0.74);
+    width: 98%;
+    background-color: #ffffff;
     border-radius: 10px;
+    margin: auto;
     padding: 10px;
-    // box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0px 0px 0px 3px rgb(0 0 0 / 20%);
+}
+.whitepanel97{
+    width: 97%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin: auto;
+    padding: 10px;
+    box-shadow: inset 0px 0px 0px 3px rgb(0 0 0 / 20%);
 }
 .container-fluid{
     // background-color: #ccc;
@@ -21,11 +30,17 @@
     width: 100%;
     margin: 3px;
     padding: 1rem;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);    
+    box-shadow: inset 0px 0px 0px 3px rgb(0 0 0 / 20%);   
 }
 .card-body .btn-warning{
     width: 100%;
     background-color: #42b983;
     border: none;
     margin: 5px;
+}
+.table_A{
+    margin: auto;
+}
+.table_A td{
+    display: flex;
 }
